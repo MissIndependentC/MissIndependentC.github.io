@@ -79,13 +79,19 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="title: javaweb阶段总结date: 2016-12-09 10:43:40tags: webcategories: web JavaWeb阶段总结[TOC] TomcatTomcat的目录结构（重点掌握） HTTP协议GET和POST的区别:  GET的提交的参数会显示到地址栏上,而POST不显示. GET往往是有大小限制的,而POST没有大小的限制. GET没有请求体,而POST有请">
+<meta property="og:type" content="article">
 <meta property="og:title" content="cuiyonghong&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/07/19/JavaWeb阶段总结/index.html">
 <meta property="og:site_name" content="cuiyonghong&#39;s blog">
+<meta property="og:description" content="title: javaweb阶段总结date: 2016-12-09 10:43:40tags: webcategories: web JavaWeb阶段总结[TOC] TomcatTomcat的目录结构（重点掌握） HTTP协议GET和POST的区别:  GET的提交的参数会显示到地址栏上,而POST不显示. GET往往是有大小限制的,而POST没有大小的限制. GET没有请求体,而POST有请">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://os4z8t7lb.bkt.clouddn.com/201710112316_298.png">
+<meta property="og:updated_time" content="2018-07-19T05:58:20.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cuiyonghong&#39;s blog">
+<meta name="twitter:description" content="title: javaweb阶段总结date: 2016-12-09 10:43:40tags: webcategories: web JavaWeb阶段总结[TOC] TomcatTomcat的目录结构（重点掌握） HTTP协议GET和POST的区别:  GET的提交的参数会显示到地址栏上,而POST不显示. GET往往是有大小限制的,而POST没有大小的限制. GET没有请求体,而POST有请">
+<meta name="twitter:image" content="http://os4z8t7lb.bkt.clouddn.com/201710112316_298.png">
 
 
 
@@ -115,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/19/JavaWeb阶段总结/"/>
 
 
 
 
 
-  <title>cuiyonghong's blog</title>
+  <title> | cuiyonghong's blog</title>
   
 
 
@@ -140,8 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,9 +239,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -266,9 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/19/JavaWeb阶段总结/" itemprop="url">Untitled</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -318,9 +321,7 @@
       
 
       
-        
-          
-            <p>title: javaweb阶段总结<br>date: 2016-12-09 10:43:40<br>tags: web<br>categories: web</p>
+        <p>title: javaweb阶段总结<br>date: 2016-12-09 10:43:40<br>tags: web<br>categories: web</p>
 <h1 id="JavaWeb阶段总结"><a href="#JavaWeb阶段总结" class="headerlink" title="JavaWeb阶段总结"></a>JavaWeb阶段总结</h1><p>[TOC]</p>
 <h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><p>Tomcat的目录结构（重点掌握）<br><img src="http://os4z8t7lb.bkt.clouddn.com/201710112316_298.png" alt="tomcat"></p>
 <p>HTTP协议<br>GET和POST的区别:</p>
@@ -537,8 +538,6 @@
 <h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>动态代理技术就是用来产生一个对象的代理对象的<br>代理对象存在的价值主要用于拦截对真实业务对象的访问<br>代理对象应该具有和目标对象(真实业务对象)相同的方法<br>现在要生成某一个对象的代理对象，这个代理对象通常也要编写一个类来生成,通过<code>Proxy</code>类提供的一个<code>newProxyInstance</code>方法用来创建一个对象的代理对象<br><code>static Object newProxyInstance(ClassLoader loader, Class&lt;?&gt;[] interfaces, InvocationHandler h)</code><br><code>newProxyInstance</code>方法用来返回一个代理对象，这个方法总共有3个参数<br><code>ClassLoader loader</code> 用来指明生成代理对象使用哪个类装载器<br><code>Class&lt;?&gt;[] interfaces</code> 用来指明生成哪个对象的代理对象，通过接口指定<br><code>InvocationHandler h</code> 用来指明产生的这个代理对象要做什么事情<br>所以我们只需要调用<code>newProxyInstance</code>方法就可以得到某一个对象的代理对象了<br>在java中规定，要想产生一个对象的代理对象，那么==这个对象必须要有一个接口==,所以只有实现了接口的类才可以创建他的代理对象<br>Proxy类负责创建代理对象时，如果指定了handler（处理器），那么不管用户调用代理对象的什么方法，该方法都是调用处理器的invoke方法<br>由于invoke方法被调用需要三个参数：代理对象、方法、方法的参数，因此不管代理对象哪个方法调用处理器的invoke方法，都必须把自己所在的对象、自己（调用invoke方法的方法）、方法的参数传递进来。<br>因此在动态代理技术里，由于不管用户调用代理对象的什么方法，都是调用开发人员编写的处理器的invoke方法（这相当于invoke方法拦截到了代理对象的方法调用）</p>
 <p>动态代理和装饰者模式<br>相同点 : 都能增强一个类的方法<br>不同的 : 如果是装饰者我们得自己写一个装饰者类  实现被装饰者的接口<br>        如果是动态代理  我们直接使用Proxy对象  代理对象<br>其实动态代理解决了装饰者模式的最大缺点就是你不用把接口中所有的方法都重新调用一遍<br>不管是装饰者还是动态代理都会有一个新的类产生  装饰者类  Proxy对象  是在原来的被增强的类基础上进行增强</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> HttpServletRequest req = (HttpServletRequest) request;</span><br><span class="line">    <span class="comment">// 增强req:</span></span><br><span class="line">    HttpServletRequest myReq = (HttpServletRequest) Proxy.newProxyInstance(req.getClass().getClassLoader(),</span><br><span class="line">            req.getClass().getInterfaces(), <span class="keyword">new</span> InvocationHandler() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                    <span class="comment">// 判断执行的方法是否是getParameter:</span></span><br><span class="line">                    <span class="keyword">if</span>(<span class="string">"getParameter"</span>.equals(method.getName()))&#123;</span><br><span class="line">                        <span class="comment">// 调用的是getParameter:需要增强这个方法.</span></span><br><span class="line">                        <span class="comment">// 判断请求方式是GET还是POST:</span></span><br><span class="line">                        String type = req.getMethod();</span><br><span class="line">                        <span class="keyword">if</span>(<span class="string">"get"</span>.equalsIgnoreCase(type))&#123;</span><br><span class="line">                            String value = (String) method.invoke(req, args);</span><br><span class="line">                            value = <span class="keyword">new</span> String(value.getBytes(<span class="string">"ISO-8859-1"</span>),<span class="string">"UTF-8"</span>);</span><br><span class="line">                            <span class="keyword">return</span> value;</span><br><span class="line">                        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">"post"</span>.equalsIgnoreCase(type))&#123;</span><br><span class="line">                            req.setCharacterEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> method.invoke(req, args);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">    chain.doFilter(myReq, response);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
     
@@ -555,140 +554,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CYH">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="cuiyonghong's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/17/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-17T12:55:53+08:00">
-                2018-07-17
-              </time>
+              <a href="/2018/07/17/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -698,10 +585,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -709,6 +597,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -729,8 +621,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -772,6 +673,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaWeb阶段总结"><span class="nav-number">1.</span> <span class="nav-text">JavaWeb阶段总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat"><span class="nav-number">1.1.</span> <span class="nav-text">Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet"><span class="nav-number">1.2.</span> <span class="nav-text">Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">Servlet概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet生命周期"><span class="nav-number">1.2.2.</span> <span class="nav-text">Servlet生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet配置"><span class="nav-number">1.2.3.</span> <span class="nav-text">Servlet配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet执行流程"><span class="nav-number">1.2.4.</span> <span class="nav-text">Servlet执行流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletContext"><span class="nav-number">1.3.</span> <span class="nav-text">ServletContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Request和Response"><span class="nav-number">1.4.</span> <span class="nav-text">Request和Response</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Request接收参数"><span class="nav-number">1.4.1.</span> <span class="nav-text">Request接收参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request获取客户机信息"><span class="nav-number">1.4.2.</span> <span class="nav-text">Request获取客户机信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request实现转发"><span class="nav-number">1.4.3.</span> <span class="nav-text">Request实现转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Response对象常用API"><span class="nav-number">1.4.4.</span> <span class="nav-text">Response对象常用API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理中文乱码"><span class="nav-number">1.4.5.</span> <span class="nav-text">处理中文乱码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转发和重定向"><span class="nav-number">1.5.</span> <span class="nav-text">转发和重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域对象"><span class="nav-number">1.6.</span> <span class="nav-text">域对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#域对象存取API"><span class="nav-number">1.6.1.</span> <span class="nav-text">域对象存取API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletContext域对象"><span class="nav-number">1.6.2.</span> <span class="nav-text">ServletContext域对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request域对象"><span class="nav-number">1.6.3.</span> <span class="nav-text">Request域对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session域对象"><span class="nav-number">1.6.4.</span> <span class="nav-text">Session域对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#会话技术"><span class="nav-number">1.7.</span> <span class="nav-text">会话技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">1.7.1.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie常用API"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">Cookie常用API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie路径问题"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">Cookie路径问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie时间问题"><span class="nav-number">1.7.1.3.</span> <span class="nav-text">Cookie时间问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookie的分类"><span class="nav-number">1.7.1.4.</span> <span class="nav-text">Cookie的分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session"><span class="nav-number">1.7.2.</span> <span class="nav-text">Session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie和Session的区别"><span class="nav-number">1.7.3.</span> <span class="nav-text">Cookie和Session的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number">1.8.</span> <span class="nav-text">过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器概念"><span class="nav-number">1.8.1.</span> <span class="nav-text">过滤器概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器的写法"><span class="nav-number">1.8.2.</span> <span class="nav-text">过滤器的写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器的相关配置"><span class="nav-number">1.8.3.</span> <span class="nav-text">过滤器的相关配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-amp-EL-amp-JSTL"><span class="nav-number">1.9.</span> <span class="nav-text">JSP&amp;EL&amp;JSTL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP中的三个指令"><span class="nav-number">1.9.1.</span> <span class="nav-text">JSP中的三个指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP中有九大内置对象"><span class="nav-number">1.9.2.</span> <span class="nav-text">JSP中有九大内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP的四个域范围"><span class="nav-number">1.9.3.</span> <span class="nav-text">JSP的四个域范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EL表达式获取域对象中的值"><span class="nav-number">1.9.4.</span> <span class="nav-text">EL表达式获取域对象中的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EL表达式执行运算"><span class="nav-number">1.9.5.</span> <span class="nav-text">EL表达式执行运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EL表达式操作WEB开发的常用的对象"><span class="nav-number">1.9.6.</span> <span class="nav-text">EL表达式操作WEB开发的常用的对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSTL标签"><span class="nav-number">1.9.7.</span> <span class="nav-text">JSTL标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">1.10.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射常用API"><span class="nav-number">1.11.</span> <span class="nav-text">反射常用API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务"><span class="nav-number">1.12.</span> <span class="nav-text">事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事务特性（ACID）"><span class="nav-number">1.12.1.</span> <span class="nav-text">事务特性（ACID）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务隔离级别"><span class="nav-number">1.12.2.</span> <span class="nav-text">事务隔离级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置事务的隔离级别"><span class="nav-number">1.12.3.</span> <span class="nav-text">设置事务的隔离级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DBUtils管理事务"><span class="nav-number">1.12.4.</span> <span class="nav-text">DBUtils管理事务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">1.13.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">1.14.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页"><span class="nav-number">1.15.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态代理"><span class="nav-number">1.16.</span> <span class="nav-text">动态代理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -912,6 +829,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
